@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TodoForm(props){
     function HandleClick(){
-        alert("nothing yet");
+        alert("nothing yet");//this is supposed to pass the input to its parrent
     }
     return (
         <div className="form">
