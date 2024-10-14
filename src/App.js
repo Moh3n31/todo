@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import TodoForm from './components/TodoForm';
+import List from './components/List';
 
-function App() {
+
+import todoList from "./todoList";
+
+export default function App() {
+  const [list, setList] = useState (...todoList);
+  function addTask(task) {
+    alert(task);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoForm onAddClick={()=>{addTask(list)}}/>
+      <List />
     </div>
   );
 }
-
-export default App;
