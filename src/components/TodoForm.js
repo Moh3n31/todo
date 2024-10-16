@@ -1,13 +1,24 @@
-import React from "react";
+import React , {useState} from "react";
 
 export default function TodoForm(props){
-    function HandleClick(){
-        alert("nothing yet");//this is supposed to pass the input to its parrent
+    const [inputValue, setInputValue] = useState('');
+
+    function handleChange(event){
+        const {value} = event.target;
+        setInputValue(value);
     }
+
+    function handleAdd () {
+        props.addNewTask(inputValue);
+        return setInputValue('');
+    }
+    
     return (
         <div className="form">
-            <input type="text" className="text-input" placeholder="Write Something..."/>
-            <button className="add-button" onClick={()=>{HandleClick()}}>ADD</button>
+            <input type="text" className="text-input"
+            placeholder="Write Something..." value={inputValue}
+            onChange={handleChange}/>
+            <button className="add-button" onClick={handleAdd}>ADD</button>
         </div>
     )
 }

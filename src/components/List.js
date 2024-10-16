@@ -4,9 +4,8 @@ import Tasks from "./Tasks";
 import cross from "../icons/cross.png";
 import check from "../icons/check.png";
 
-export default function List (props){
+export default function List ({taskList=[], handleClick}){
 
-    
     return  (
         <div className="task-bar">
             <div className="list-title">
@@ -18,8 +17,8 @@ export default function List (props){
                 <p>Finished</p>
             </div>
 
-            <Tasks isDone={false} taskList={props.taskList}/>{/*unfinished*/}
-            <Tasks isDone={true}/>{/*finished*/}
+            <Tasks isDone={false} taskList={taskList} handleClick={handleClick}/>{/*unfinished*/}
+            <Tasks isDone={true} taskList={taskList} handleClick={handleClick}/>{/*finished*/}
         </div>
     )
 }

@@ -85,6 +85,23 @@ html {
     border-radius: 4px;
     padding: 20px;
     margin: 0 40px 20px 40px;
+    height: 303px;
+
+    overflow-y: scroll;
+}
+
+.task-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.task-list::-webkit-scrollbar-thumb:hover {
+    background: rgb(195, 152, 96);
+}
+
+
+.task-list::-webkit-scrollbar-thumb {
+    background: rgb(191, 159, 116);
 }
 
 .task{
@@ -105,11 +122,12 @@ html {
     font-size: 20px;
     margin: 7px 0;
 }
+
 .task>p{
     margin: 0;
 }
 
-#done {
+#done>p {
     text-decoration: line-through;
     color: rgb(49, 49, 49);
 }
